@@ -12,31 +12,44 @@ const styles = {
     flex: 1,
   },
   buttonStyle: {
-    height: 30,
-    marginBottom: 8,
+    height: 50,
   },
 };
 
-const App = () => {
-  const { containerStyle, textInputStyle, buttonStyle } = styles;
-  return (
-    <View style={{ flex: 1, backgroundColor: '#ddd' }}>
-      <Header
-        centerComponent={{ text: 'Youtube Search', style: { color: '#fff' } }}
-        outerContainerStyles={{ backgroundColor: '#E62117' }}
-      />
-      <View style={containerStyle}>
-        <TextInput
-          style={textInputStyle}
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      term: '',
+    };
+  }
+
+  render() {
+    const { containerStyle, textInputStyle, buttonStyle } = styles;
+    const { term } = this.state;
+
+    return (
+      <View style={{ flex: 1, backgroundColor: '#ddd' }}>
+        <Header
+          centerComponent={{ text: 'Youtube Search', style: { color: '#fff' } }}
+          outerContainerStyles={{ backgroundColor: '#E62117' }}
         />
-        <Button
-          buttonStyle={buttonStyle}
-          title="Search"
-          onPress={() => console.log('test')}
-        />
+        <View style={containerStyle}>
+          <TextInput
+            onChangeText={text => this.setState({ term: text })}
+            value={term}
+            style={textInputStyle}
+          />
+          <Button
+            buttonStyle={buttonStyle}
+            title="Search"
+            onPress={() => console.log(this.state.term)}
+          />
+        </View>
       </View>
-    </View>
-  );
-};
+    );
+  }
+}
 
 export default App;

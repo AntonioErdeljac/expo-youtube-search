@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
   render() {
     const { containerStyle, textInputStyle, buttonStyle } = styles;
     const { term } = this.state;
-    const { onPressSearch } = this.props;
+    const { onPressSearch, isLoading } = this.props;
 
     return (
       <View style={containerStyle}>
@@ -40,7 +40,7 @@ class SearchBar extends React.Component {
         />
         <Button
           buttonStyle={buttonStyle}
-          title="Search"
+          title={isLoading ? 'Loading' : 'Search'}
           onPress={() => onPressSearch(term)}
         />
       </View>

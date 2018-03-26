@@ -3,7 +3,7 @@ import { Header } from 'react-native-elements';
 
 const AppHeader = ({ headerText }) => (
   <Header
-    centerComponent={{ text: { headerText }, style: { color: '#fff' } }}
+    centerComponent={{ text: headerText, style: { color: '#fff' } }}
     outerContainerStyles={{ backgroundColor: '#E62117' }}
   />
 );

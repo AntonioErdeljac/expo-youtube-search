@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/SearchBar';
 import AppHeader from './components/AppHeader';
+import VideoList from './components/VideoList';
 
 const API_KEY = 'AIzaSyBJaQxYRHYHlpgiWTLpXSwS2NONkTO8ZWU';
 
@@ -26,7 +27,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, videos } = this.state;
 
     return (
       <View style={{ flex: 1, backgroundColor: '#ddd' }}>
@@ -36,6 +37,9 @@ class App extends React.Component {
         <SearchBar
           isLoading={isLoading}
           onPressSearch={this.onPressSearch}
+        />
+        <VideoList
+          videos={videos}
         />
       </View>
     );

@@ -14,7 +14,7 @@ const VideoList = (props) => {
   const { videos } = props;
 
   const videoItems = videos.map(video => (
-    <VideoListItem video={video} />
+    <VideoListItem key={Math.random()} video={video} />
   ));
 
   return (

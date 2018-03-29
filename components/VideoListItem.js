@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { Card } from 'react-native-elements';
 
+import WatchButton from './WatchButton';
+
 const styles = {
   cardStyle: {
     padding: 5,
@@ -35,12 +37,13 @@ const VideoListItem = (props) => {
 
   return (
     <View>
-      <Card containerStyle={styles.cardStyle}>
+      <Card title={null} containerStyle={styles.cardStyle}>
         <Image style={styles.imageStyle} source={{ uri: video.snippet.thumbnails.medium.url }} />
         <View style={styles.contentStyle}>
           <Text style={styles.videoTitleStyle}>{video.snippet.title}</Text>
           <Text style={styles.channelTitleStyle}>{video.snippet.channelTitle}</Text>
           <Text style={styles.descriptionStyle}>{video.snippet.description}</Text>
+          <WatchButton videoId={video.id.videoId} />
         </View>
       </Card>
     </View>

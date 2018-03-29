@@ -19,6 +19,10 @@ class App extends React.Component {
     this.onPressSearch = this.onPressSearch.bind(this);
   }
 
+  componentWillMount() {
+    this.onPressSearch('Infokup');
+  }
+
   onPressSearch(term) {
     this.setState({ isLoading: true });
     YTSearch({ key: API_KEY, term }, (videos) => {

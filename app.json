@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "youtube-search",
-    "description": "This project is really great.",
+    "name": "Simple Youtube Search",
+    "description": "Youtube search app",
     "slug": "youtube-search",
     "privacy": "public",
     "sdkVersion": "25.0.0",
@@ -12,10 +12,16 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#E62117"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "com.companyname.youtubesearch",
+      "versionCode": 1,
+      "permissions": []
     }
   }
 }
